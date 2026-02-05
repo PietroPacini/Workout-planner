@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 10px;
+    background-color: #4682b4;
+    color: #f5f5f5;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+#tab {
+    display: inline;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tab:hover {
+    color: #00008b;
+}
+
+div input {
+    display: block;
+    margin: 5px 0 10px;
+}
+
+#sets, #reps {
+    width: 3rem;
+}
+
+#add-btn {
+    margin-top: 10px;
+}
+
+.other-btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (min-width: 320px) {
+    body {
+        width: 320px;
+    }
+}
+
+@media (min-width: 640px) {
+    body {
+        width: 400px;
+        font-size: 1.2rem;
+    }
+}
