@@ -44,6 +44,10 @@ div input {
     gap: 5px;
 }
 
+#workout-message {
+    white-space: pre-line;
+}
+
 @media (min-width: 320px) {
     body {
         width: 320px;
