@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-#tab {
+.tab {
     display: inline;
     text-decoration: underline;
     cursor: pointer;
@@ -29,11 +29,11 @@ div input {
     margin: 5px 0 10px;
 }
 
-#sets, #reps {
+.small-input {
     width: 3rem;
 }
 
-#add-btn {
+.add-btn {
     margin-top: 10px;
 }
 
@@ -44,8 +44,13 @@ div input {
     gap: 5px;
 }
 
-#workout-message {
+.message {
     white-space: pre-line;
+    margin-top: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 @media (min-width: 320px) {

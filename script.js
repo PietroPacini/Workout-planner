@@ -17,13 +17,24 @@ about.addEventListener("click", () => toggleDescription());
 
 const workoutState = [];
 
+function updateUI () {
+    exerciseName.value = "";
+    sets.value = "";
+    reps.value = "";
+}
+
 function addExercise () {
-    const exerciseObj = {
-        exercise: exerciseName.value, 
-        sets: sets.value,
-        reps: reps.value
-    };
-    workoutState.push(exerciseObj);
+    if (exerciseName.value && sets.value && reps.value) {
+        const exerciseObj = {
+            exercise: exerciseName.value, 
+            sets: sets.value,
+            reps: reps.value
+        };
+        workoutState.push(exerciseObj);
+    } else {
+        msg.textContent = `Please fill every input before adding an exercise`;
+    }
+    updateUI();
 }
 
 function showWorkout () {
@@ -35,6 +46,10 @@ function showWorkout () {
         
         `;
     };
+    
+    if (!workoutState[0]) {
+        msg.textContent = "Your workout is actually empty. Add an exercise!";
+    }
 }
 
 addBtn.addEventListener("click", () => addExercise());

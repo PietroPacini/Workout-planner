@@ -8,24 +8,24 @@
     </head>
     <body>
         <h1 class="title">Workout Planner</h1>
-        <p id="tab">About</p>
+        <p id="tab" class="tab">About</p>
         <p id="description" hidden>This <strong>workout planner</strong> will help you organize your training sessions. With this app you can add or remove every exercise you want to your workout, and you can easily check the complete workout anytime.</p>
         <div class="add-exercise">
             <h3>Insert exercise:</h3>
             <label for="exercise-name">Exercise:</label>
             <input type="text" id="exercise-name" name="exercise-name" required>
             <label for="sets">Sets:</label>
-            <input type="number" id="sets" name="sets" max="99" required>
+            <input type="number" id="sets" class="small-input" name="sets" required>
             <label for="reps">Reps:</label>
-            <input type="number" id="reps" name="reps" max="99" required>
-            <button type="submit" id="add-btn">Add exercise</button>
+            <input type="number" id="reps" class="small-input" name="reps" required>
+            <button type="submit" id="add-btn" class="add-btn">Add exercise</button>
         </div>
         <div class="other-btns">
             <button id="show-btn">Show workout</button>
             <button id="delete-btn">Delete exercise</button>
             <button id="number-btn">Show n° of ex.</button>
         </div>
-        <p id="workout-message"></p>
+        <div class="message"><p id="workout-message">Press "Show workout" to see the exercises you added!</p></div>
         <script src="script.js"></script>
     </body>
 </html>
