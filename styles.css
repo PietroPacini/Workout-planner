@@ -24,9 +24,14 @@ body {
     color: #00008b;
 }
 
-div input {
+div input, .textarea {
     display: block;
     margin: 5px 0 10px;
+}
+
+.textarea {
+    height: 5rem;
+    width: 100%;
 }
 
 .small-input {

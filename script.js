@@ -4,6 +4,7 @@ const buttons = document.querySelectorAll("button");
 const exerciseName = document.getElementById("exercise-name");
 const sets = document.getElementById("sets");
 const reps = document.getElementById("reps");
+const notes = document.getElementById("notes");
 const addBtn = document.getElementById("add-btn");
 const showBtn = document.getElementById("show-btn");
 const msg = document.getElementById("workout-message");
@@ -21,6 +22,7 @@ function updateUI () {
     exerciseName.value = "";
     sets.value = "";
     reps.value = "";
+    notes.value = "";
 }
 
 function addExercise () {
@@ -28,7 +30,8 @@ function addExercise () {
         const exerciseObj = {
             exercise: exerciseName.value, 
             sets: sets.value,
-            reps: reps.value
+            reps: reps.value,
+            notes: notes.value
         };
         workoutState.push(exerciseObj);
     } else {
@@ -43,10 +46,10 @@ function showWorkout () {
         msg.textContent += `Exercise: ${singleEx.exercise}
         sets: ${singleEx.sets}
         reps: ${singleEx.reps}
+        notes: ${singleEx.notes}
         
         `;
     };
-    
     if (!workoutState[0]) {
         msg.textContent = "Your workout is actually empty. Add an exercise!";
     }
