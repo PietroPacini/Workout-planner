@@ -8,6 +8,7 @@ const notes = document.getElementById("notes");
 const addBtn = document.getElementById("add-btn");
 const showBtn = document.getElementById("show-btn");
 const deleteBtn = document.getElementById("delete-btn");
+const numberBtn = document.getElementById("number-btn");
 const msg = document.getElementById("workout-message");
 
 function toggleDescription () {
@@ -29,7 +30,7 @@ function resetUI () {
 function addExercise () {
     if (exerciseName.value && sets.value && reps.value) {
         const exerciseObj = {
-            exercise: exerciseName.value.trim(),
+            exercise: exerciseName.value.trim().toLowerCase(),
             sets: sets.value,
             reps: reps.value,
             notes: notes.value
@@ -58,14 +59,24 @@ function showWorkout () {
 
 function deleteExercise () {
     for (let i = 0; i < workoutState.length; i++) {
-        if (exerciseName.value.trim() === workoutState[i].exercise) {
+        if (exerciseName.value.trim().toLowerCase() === workoutState[i].exercise) {
             workoutState.splice(i, 1);
         }
     }
     resetUI();
 }
 
+function countExercises () {
+    if (msg.textContent[0] !== "T") {
+        const countMessage = `Total n. of exercises: ${workoutState.length}`;
+        msg.textContent = `${countMessage}
+
+        ${msg.textContent}`;
+    }
+}
+
 addBtn.addEventListener("click", () => addExercise());
 showBtn.addEventListener("click", () => showWorkout());
 deleteBtn.addEventListener("click", () => deleteExercise());
+numberBtn.addEventListener("click", () => countExercises());
 
