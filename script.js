@@ -29,7 +29,7 @@ function resetUI () {
 function addExercise () {
     if (exerciseName.value && sets.value && reps.value) {
         const exerciseObj = {
-            exercise: exerciseName.value, 
+            exercise: exerciseName.value.trim(),
             sets: sets.value,
             reps: reps.value,
             notes: notes.value
@@ -58,7 +58,7 @@ function showWorkout () {
 
 function deleteExercise () {
     for (let i = 0; i < workoutState.length; i++) {
-        if (exerciseName.value === workoutState[i].exercise) {
+        if (exerciseName.value.trim() === workoutState[i].exercise) {
             workoutState.splice(i, 1);
         }
     }

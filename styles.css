@@ -5,7 +5,7 @@
 body {
     font-family: sans-serif;
     padding: 10px;
-    background-color: #4682b4;
+    background-color: #03045e;
     color: #f5f5f5;
     margin: auto;
 }
@@ -21,12 +21,14 @@ body {
 }
 
 .tab:hover {
-    color: #00008b;
+    color: #00b4b8;
 }
 
 div input, .textarea {
     display: block;
     margin: 5px 0 10px;
+    background-color: #fff;
+    font-size: 1rem;
 }
 
 .textarea {
@@ -36,6 +38,18 @@ div input, .textarea {
 
 .small-input {
     width: 3rem;
+}
+
+button {
+    background-color: #90e0ef;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00b4b8;
 }
 
 .add-btn {
@@ -52,7 +66,7 @@ div input, .textarea {
 .message {
     white-space: pre-line;
     margin-top: 50px;
-    background-color: white;
+    background-color: #caf0f8;;
     color: black;
     border-radius: 5px;
     padding: 10px;
