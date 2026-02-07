@@ -7,6 +7,7 @@ const reps = document.getElementById("reps");
 const notes = document.getElementById("notes");
 const addBtn = document.getElementById("add-btn");
 const showBtn = document.getElementById("show-btn");
+const deleteBtn = document.getElementById("delete-btn");
 const msg = document.getElementById("workout-message");
 
 function toggleDescription () {
@@ -18,7 +19,7 @@ about.addEventListener("click", () => toggleDescription());
 
 const workoutState = [];
 
-function updateUI () {
+function resetUI () {
     exerciseName.value = "";
     sets.value = "";
     reps.value = "";
@@ -37,7 +38,7 @@ function addExercise () {
     } else {
         msg.textContent = `Please fill every input before adding an exercise`;
     }
-    updateUI();
+    resetUI();
 }
 
 function showWorkout () {
@@ -55,6 +56,16 @@ function showWorkout () {
     }
 }
 
+function deleteExercise () {
+    for (let i = 0; i < workoutState.length; i++) {
+        if (exerciseName.value === workoutState[i].exercise) {
+            workoutState.splice(i, 1);
+        }
+    }
+    resetUI();
+}
+
 addBtn.addEventListener("click", () => addExercise());
 showBtn.addEventListener("click", () => showWorkout());
+deleteBtn.addEventListener("click", () => deleteExercise());
 
